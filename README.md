@@ -95,6 +95,7 @@ yet there are some distinctions:
     translates to less resources, lower costs, and happier users.
 <br>
 <br>
+
 ![](./images/media/image7.jpeg)
 <br>
 <br>
