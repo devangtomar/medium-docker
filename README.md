@@ -1,7 +1,7 @@
 **Docker for rookies 🐳**
 
-![](./images/media/image1.png)
 
+<img src="./images/media/image1.png"  width="250" height="250">
 
 One of those services you may have never used but always hear about is
 Docker. Prior to my investigation into the DevOps industry, I had never
@@ -10,6 +10,8 @@ joining a modern development team is having a working knowledge of
 Docker. Docker has soared to the top of the popularity lists, and
 [**[there are good reasons for
 this.]{.underline}**](https://www.docker.com/blog/key-insights-from-stack-overflows-2022-developer-survey/#:~:text=Gartner%20believes%20that%2070%25%20of,Data%20courtesy%20of%20Stack%20Overflow.)
+<br>
+<br>
 
 ![](./images/media/image2.jpeg)
 
@@ -127,11 +129,15 @@ containers as your resources will allow.
 
 Update your packages first:
 
-\$ sudo apt update
+```bash
+$ sudo apt update
+```
 
 Next, use apt-get to install Docker :
 
-\$ sudo apt install docker.io
+```bash
+$ sudo apt install docker.io
+```
 
 Lastly, make sure Docker is properly installed :
 
@@ -139,22 +145,26 @@ Once Docker has been set up. We must confirm it, therefore run the next
 command to do so. All of the options that are available for the docker
 and that you can use are listed by this command.
 
-\$ docker
+```bash
+$ docker
+```
 
 ![](./images/media/image10.png)
 
 
-\$ sudo docker run hello-world
+```bash
+$ sudo docker run hello-world
+```
 
 ![](./images/media/image11.png)
 
 docker image
 
--   ***For MacOS :*** you can follow [[this
-    link]{.underline}](https://docs.docker.com/docker-for-mac/install/).
+-   ***For MacOS :*** you can follow [this
+    link](https://docs.docker.com/docker-for-mac/install/).
 
--   ***For Windows :*** you can follow [[this
-    link]{.underline}](https://docs.docker.com/docker-for-windows/install/).
+-   ***For Windows :*** you can follow [this
+    link](https://docs.docker.com/docker-for-windows/install/).
 
 **Now let's create your first application 🙋🏻‍♂️**
 
@@ -169,17 +179,17 @@ the procedure, you'll find that it's not all that difficult.
 
 Reminder: Python won't need to be installed on your machine. The Docker
 environment will decide whether to include Python with the intention of
-running your code. [[Python installation
-guide.]{.underline}](https://www.digitalocean.com/community/tutorials/install-python-windows-10)
+running your code. [Python installation
+guide.](https://www.digitalocean.com/community/tutorials/install-python-windows-10)
 
 **Creating your dockerized application 🌻**
 
 You'll need 2 files :
 
--   A file named main.py (python file that will contain the code to be
+-   A file named `main.py` (python file that will contain the code to be
     executed).
 
--   A file named "Dockerfile" (Docker file that will contain the
+-   A file named `Dockerfile` (Docker file that will contain the
     necessary instructions to create the environment).
 
 ![](./images/media/image13.jpeg)
@@ -194,42 +204,53 @@ generated](./images/media/image14.png)
 Also, your Python code may be as straightforward as printing "hello
 world"
 
-*import* sys
 
-print(\"Hello there! This is a demo of python script inside Docker
-container!\")
+```python
+import sys
+
+print("Hello there! This is a demo of python script inside Docker
+container!")
 
 print(sys.version)
+```
 
 Here's goes your Dockerfile :
 
-*#Deriving the latest base image*
+```dockerfile
+#Deriving the latest base image*
 
-*FROM* python:latest
+FROM python:latest
 
-*LABEL* *Maintainer=*\"ayushmanndev\"
+LABEL Maintainer="ayushmanndev"
 
-*WORKDIR* */usr/app/src*
+WORKDIR /usr/app/src
 
-*COPY* *main.py* *./*
+COPY* main.py ./
 
-*CMD* *\[* \"python\"*,* \"./main.py\"*\]*
+CMD* ["python","./main.py"]
+```
 
 You can simply run the following command to create your image once you
 have this file and have given it the name Dockerfile :
 
+```dockerfile
 docker build . -t my-image:my-tag
+```
 
 Once your image has been built, you can execute it by using the
 following straightforward command :
 
-docker run -it my-image:my-tag \"python3 ./main.py\"
+```dockerfile
+docker run -it my-image:my-tag "python3 ./main.py"
+```
 
 With the help of this command, you will have access to a shell session
 within the container that you can use however you choose. Open a new
 terminal window while the one in the container is still open and type
 
+```dockerfile
 docker ps
+```
 
 To see the following output in order to better comprehend the concept at
 this point :
@@ -246,7 +267,9 @@ down and "docker ps" will produce nothing.
 The reason for this behaviour is straightforward: when you ran the
 runner command above as :
 
-docker run -it my-image:my-tag \"python3 ./main.py\"
+```dockerfile
+docker run -it my-image:my-tag "python3 ./main.py"
+```
 
 You essentially instructed Docker to start this container with the
 "python3 ./main.py" process as the main process inside the container.
@@ -259,25 +282,35 @@ If you want to publish your Docker images, I advise pushing your most
 recent creation to DockerHub.
 
 -   Create a DockerHub account first at
-    [[https://hub.docker.com]{.underline}](https://hub.docker.com/)
+    [https://hub.docker.com](https://hub.docker.com/)
 
 -   Using the CLI, sign in to your DockerHub account :
 
+```dockerfile
 docker login
+```
 
 -   You can also log out from your CLI using:
 
+```dockerfile
 docker logout
+```
 
 Furthermore, you can push your newly created Docker image by first
 tagging it.
 
-docker tag \<image\> my-image:my-tag\
-\<DOCKER_HUB_USERNAME\>/dockerhub:my-image
+
+```dockerfile
+docker tag <image> my-image:my-tag
+<DOCKER_HUB_USERNAME>/dockerhub:my-image
+```
+
 
 Next, push the Docker image :
 
-docker push \<DOCKER_HUB_USERNAME\>/dockerhub:my-image
+```dockerfile
+docker push <DOCKER_HUB_USERNAME>/dockerhub:my-image
+```
 
 **Conclusion 🤔**
 
@@ -290,23 +323,23 @@ it. If this was helpful or if I missed anything, kindly let me know!
 
 **GitHub URL for this article 💻**
 
-[[**GitHub - devangtomar/medium-docker**\
+[**GitHub - devangtomar/medium-docker**\
 *You can\'t perform that action at this time. You signed in with another
 tab or window. You signed out in another tab
-or...*github.com]{.underline}](https://github.com/devangtomar/medium-docker)
+or...*github.com](https://github.com/devangtomar/medium-docker)
 
 **Let's connect and chat! Open to anything under the sun 🏖️🍹**
 
 **🐦 Twitter :**
-[[devangtomar7]{.underline}](https://twitter.com/devangtomar7)\
+[devangtomar7](https://twitter.com/devangtomar7)\
 **🔗 LinkedIn :**
-[[devangtomar]{.underline}](https://www.linkedin.com/in/devangtomar)\
+[devangtomar](https://www.linkedin.com/in/devangtomar)\
 **📚 Stackoverflow :**
-[[devangtomar]{.underline}](https://stackoverflow.com/users/8198097/devangtomar)\
+[devangtomar](https://stackoverflow.com/users/8198097/devangtomar)\
 **🖼️ Instagram :**
-[[be_ayushmann]{.underline}](https://instagram.com/be_ayushmann)\
-Ⓜ️ **Medium :** [[Devang
-Tomar]{.underline}](https://medium.com/u/8f5e1c86129d?source=post_page-----e42119a306ca--------------------------------)\
+[be_ayushmann](https://instagram.com/be_ayushmann)\
+Ⓜ️ **Medium :** [Devang
+Tomar](https://medium.com/u/8f5e1c86129d?source=post_page-----e42119a306ca--------------------------------)\
 ☊ **Hashnode :**
-[[devangtomar]{.underline}](https://devangtomar.hashnode.dev/)\
-**🧑‍💻 Dev.to :** [[devangtomar]{.underline}](https://dev.to/devangtomar)
+[devangtomar](https://devangtomar.hashnode.dev/)\
+**🧑‍💻 Dev.to :** [devangtomar](https://dev.to/devangtomar)
