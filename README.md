@@ -1,6 +1,5 @@
 **Docker for rookies 🐳**
 
-
 <img src="./images/media/image1.png"  width="250" height="250">
 
 One of those services you may have never used but always hear about is
@@ -8,13 +7,12 @@ Docker. Prior to my investigation into the DevOps industry, I had never
 heard of or utilized Docker while I was in college. A prerequisite for
 joining a modern development team is having a working knowledge of
 Docker. Docker has soared to the top of the popularity lists, and
-[**[there are good reasons for
-this.]{.underline}**](https://www.docker.com/blog/key-insights-from-stack-overflows-2022-developer-survey/#:~:text=Gartner%20believes%20that%2070%25%20of,Data%20courtesy%20of%20Stack%20Overflow.)
+[there are good reasons for
+this.](https://www.docker.com/blog/key-insights-from-stack-overflows-2022-developer-survey/#:~:text=Gartner%20believes%20that%2070%25%20of,Data%20courtesy%20of%20Stack%20Overflow.)
 <br>
 <br>
 
 ![](./images/media/image2.jpeg)
-
 
 This article's goal is to ensure that you understand by the end of it
 what the hell Docker is, why we need it, how to set it up on your
@@ -24,10 +22,9 @@ discuss what a Dockerfile is 😏)**
 ![Text Description automatically
 generated](./images/media/image3.jpeg)
 
-
 If you are familiar with Docker, you might want to read my posts on
-[**[some alternatives I
-assessed]{.underline}**](https://medium.com/@devangtomar123/podman-an-alternative-to-docker-desktop-c30370edc98b).
+[some alternatives I
+assessed](https://medium.com/@devangtomar123/podman-an-alternative-to-docker-desktop-c30370edc98b).
 Now let's get started
 
 **Why do we need Docker? ❓🙋🏻‍♂️**
@@ -42,7 +39,6 @@ software that each machine runs.
 
 ![](./images/media/image4.jpeg)
 
-
 It is clear why this quickly becomes extremely complicated. Since
 manually configuring these servers is impractical, many businesses
 maintain a list of servers that they routinely update through
@@ -55,7 +51,6 @@ this concern? 🤔
 
 ![Graphical user interface, website Description automatically
 generated](./images/media/image5.jpeg)
-
 
 **Now what Docker is? 💭**
 
@@ -70,20 +65,19 @@ and consistently in different computing environments.
 
 ![](./images/media/image6.jpeg)
 
-
 Thoughts like "this is the same as virtual machines" are audible to me,
 yet there are some distinctions:
 
--   Docker containers don't have separate, dedicated hardware-level
+- Docker containers don't have separate, dedicated hardware-level
     resources that would allow them to operate independently; instead,
     they share the same system resources.
 
--   They don't have to contain an OS in its entirety.
+- They don't have to contain an OS in its entirety.
 
--   They enable the operation of several workloads on the same OS,
+- They enable the operation of several workloads on the same OS,
     allowing for resource-efficient resource consumption.
 
--   They are quite lightweight and effective since they mostly involve
+- They are quite lightweight and effective since they mostly involve
     dependencies at the application-level. A computer that can operate
     two virtual machines and tens of Docker containers without issue
     translates to less resources, lower costs, and happier users.
@@ -106,7 +100,6 @@ to transmit them over networks using the least amount of data possible.
 
 ![](./images/media/image8.png)
 
-
 A container is an instance of an image. Containers are instances that
 are currently executing and have top writable layers; they execute the
 actual applications. The readable layer is also erased when the
@@ -116,7 +109,6 @@ picture.
 
 ![](./images/media/image9.jpeg)
 
-
 The following metaphor is a helpful way to think about images and
 containers: Containers are the cakes you bake, and images are the
 recipes for making a cake. A recipe can be used to create as many cakes
@@ -125,18 +117,18 @@ containers as your resources will allow.
 
 **Installing Docker on your machine ⚙️**
 
--   **For Ubuntu:**
+- **For Ubuntu:**
 
 Update your packages first:
 
 ```bash
-$ sudo apt update
+sudo apt update
 ```
 
 Next, use apt-get to install Docker :
 
 ```bash
-$ sudo apt install docker.io
+sudo apt install docker.io
 ```
 
 Lastly, make sure Docker is properly installed :
@@ -146,24 +138,23 @@ command to do so. All of the options that are available for the docker
 and that you can use are listed by this command.
 
 ```bash
-$ docker
+docker
 ```
 
 ![](./images/media/image10.png)
 
-
 ```bash
-$ sudo docker run hello-world
+sudo docker run hello-world
 ```
 
 ![](./images/media/image11.png)
 
 docker image
 
--   ***For MacOS :*** you can follow [this
+- ***For MacOS :*** you can follow [this
     link](https://docs.docker.com/docker-for-mac/install/).
 
--   ***For Windows :*** you can follow [this
+- ***For Windows :*** you can follow [this
     link](https://docs.docker.com/docker-for-windows/install/).
 
 **Now let's create your first application 🙋🏻‍♂️**
@@ -186,24 +177,21 @@ guide.](https://www.digitalocean.com/community/tutorials/install-python-windows-
 
 You'll need 2 files :
 
--   A file named `main.py` (python file that will contain the code to be
+- A file named `main.py` (python file that will contain the code to be
     executed).
 
--   A file named `Dockerfile` (Docker file that will contain the
+- A file named `Dockerfile` (Docker file that will contain the
     necessary instructions to create the environment).
 
 ![](./images/media/image13.jpeg)
-
 
 You should typically have the following folder structure :
 
 ![Graphical user interface, text Description automatically
 generated](./images/media/image14.png)
 
-
 Also, your Python code may be as straightforward as printing "hello
 world"
-
 
 ```python
 import sys
@@ -257,7 +245,6 @@ this point :
 
 ![](./images/media/image15.png)
 
-
 You may see your currently running container by setting the IMAGE column
 to your new image, which will display the one that is displayed there.
 There is one little exception, though: if you end the shell session
@@ -281,16 +268,16 @@ the shell session, your container will die, simply as that. 🙋🏻‍♂️
 If you want to publish your Docker images, I advise pushing your most
 recent creation to DockerHub.
 
--   Create a DockerHub account first at
+- Create a DockerHub account first at
     [https://hub.docker.com](https://hub.docker.com/)
 
--   Using the CLI, sign in to your DockerHub account :
+- Using the CLI, sign in to your DockerHub account :
 
 ```dockerfile
 docker login
 ```
 
--   You can also log out from your CLI using:
+- You can also log out from your CLI using:
 
 ```dockerfile
 docker logout
@@ -299,12 +286,10 @@ docker logout
 Furthermore, you can push your newly created Docker image by first
 tagging it.
 
-
 ```dockerfile
 docker tag <image> my-image:my-tag
 <DOCKER_HUB_USERNAME>/dockerhub:my-image
 ```
-
 
 Next, push the Docker image :
 
@@ -319,7 +304,6 @@ helpful. The hardest part of finishing something is frequently beginning
 it. If this was helpful or if I missed anything, kindly let me know!
 
 ![](./images/media/image16.jpeg)
-
 
 **GitHub URL for this article 💻**
 
