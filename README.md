@@ -282,8 +282,13 @@ docker ps
 
 To see the following output in order to better comprehend the concept at
 this point :
+<br>
+<br>
 
 ![](./images/media/image15.png)
+
+<br>
+<br>
 
 You may see your currently running container by setting the IMAGE column
 to your new image, which will display the one that is displayed there.
@@ -343,7 +348,13 @@ Anyone who feels unprepared to learn about Docker may find this post
 helpful. The hardest part of finishing something is frequently beginning
 it. If this was helpful or if I missed anything, kindly let me know!
 
+<br>
+<br>
+
 ![](./images/media/image16.jpeg)
+
+<br>
+<br>
 
 **GitHub URL for this article 💻**
 
