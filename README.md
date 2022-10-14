@@ -12,12 +12,16 @@ this.](https://www.docker.com/blog/key-insights-from-stack-overflows-2022-develo
 <br>
 <br>
 
-![](./images/media/image2.jpeg)
+<img src="./images/media/image2.jpeg"  width="500" height="500">
+<br>
+<br>
 
 This article's goal is to ensure that you understand by the end of it
 what the hell Docker is, why we need it, how to set it up on your
 laptop, and perhaps even a basic Dockerfile. **(Don't worry! We will
 discuss what a Dockerfile is 😏)**
+<br>
+<br>
 
 ![Text Description automatically
 generated](./images/media/image3.jpeg)
@@ -36,8 +40,11 @@ servers with a cluster of virtual machines for each of its platforms. An
 OS must be installed on each server, which also requires periodic
 updates and patches as well as the installation of dependencies for the
 software that each machine runs.
-
+<br>
+<br>
 ![](./images/media/image4.jpeg)
+<br>
+<br>
 
 It is clear why this quickly becomes extremely complicated. Since
 manually configuring these servers is impractical, many businesses
@@ -48,10 +55,12 @@ receive updates, which can lead to mistakes that have an effect on
 system performance. It can also be a nightmare to debug if there is just
 one bad server in a room full of hundreds. How does Docker addresses
 this concern? 🤔
-
+<br>
+<br>
 ![Graphical user interface, website Description automatically
 generated](./images/media/image5.jpeg)
-
+<br>
+<br>
 **Now what Docker is? 💭**
 
 One solution that made use of the concept of isolated resources was
@@ -62,8 +71,11 @@ desired. The containers are described as follows by Docker:
 A container is a standardized software component that wraps up code and
 all of its dependencies to ensure that an application will run swiftly
 and consistently in different computing environments.
-
+<br>
+<br>
 ![](./images/media/image6.jpeg)
+<br>
+<br>
 
 Thoughts like "this is the same as virtual machines" are audible to me,
 yet there are some distinctions:
@@ -81,9 +93,11 @@ yet there are some distinctions:
     dependencies at the application-level. A computer that can operate
     two virtual machines and tens of Docker containers without issue
     translates to less resources, lower costs, and happier users.
-
+<br>
+<br>
 ![](./images/media/image7.jpeg)
-
+<br>
+<br>
 virtual machines
 
 **Now what are Docker images and containers? 😵**
@@ -97,8 +111,11 @@ including the source code, libraries, dependencies, tools, and other
 files. When using Docker, we begin with a base image. Since images can
 get very huge, they are made to be comprised of layers of other images
 to transmit them over networks using the least amount of data possible.
-
+<br>
+<br>
 ![](./images/media/image8.png)
+<br>
+<br>
 
 A container is an instance of an image. Containers are instances that
 are currently executing and have top writable layers; they execute the
@@ -106,9 +123,11 @@ actual applications. The readable layer is also erased when the
 container is deleted, but the underlying image is left in tact. The
 major lesson here is that you can run several containers off of a single
 picture.
-
+<br>
+<br>
 ![](./images/media/image9.jpeg)
-
+<br>
+<br>
 The following metaphor is a helpful way to think about images and
 containers: Containers are the cakes you bake, and images are the
 recipes for making a cake. A recipe can be used to create as many cakes
@@ -140,14 +159,25 @@ and that you can use are listed by this command.
 ```bash
 docker
 ```
+<br>
+<br>
 
 ![](./images/media/image10.png)
+
+<br>
+<br>
 
 ```bash
 sudo docker run hello-world
 ```
 
+<br>
+<br>
+
 ![](./images/media/image11.png)
+
+<br>
+<br>
 
 docker image
 
@@ -165,8 +195,12 @@ brief tutorial.
 
 Dockerfile will be required to start this program. Once you comprehend
 the procedure, you'll find that it's not all that difficult.
-
+<br>
+<br>
 ![](./images/media/image12.png)
+
+<br>
+<br>
 
 Reminder: Python won't need to be installed on your machine. The Docker
 environment will decide whether to include Python with the intention of
@@ -183,7 +217,13 @@ You'll need 2 files :
 - A file named `Dockerfile` (Docker file that will contain the
     necessary instructions to create the environment).
 
+<br>
+<br>
+
 ![](./images/media/image13.jpeg)
+
+<br>
+<br>
 
 You should typically have the following folder structure :
 
